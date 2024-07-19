@@ -1,0 +1,45 @@
+# scripts/main.py
+
+from scripts.blockchain_metrics import fetch_blockchain_metrics, analyze_blockchain_metrics
+from scripts.transaction_analysis import fetch_transaction_data, analyze_transaction_data
+from scripts.block_analysis import fetch_block_data, analyze_block_data
+from scripts.network_statistics import fetch_network_statistics, analyze_network_statistics
+
+def main():
+    # Example usage for Blockchain Metrics
+    api_url = 'https://api.blockchain.example.com'
+    blockchain_metrics_df = fetch_blockchain_metrics(api_url)
+    print('Blockchain Metrics:')
+    print(blockchain_metrics_df)
+    blockchain_metrics_analysis_df = analyze_blockchain_metrics(blockchain_metrics_df)
+    print('Blockchain Metrics Analysis:')
+    print(blockchain_metrics_analysis_df)
+
+    # Example usage for Transaction Analysis
+    tx_hash = '0xabcdef1234567890'
+    transaction_data_df = fetch_transaction_data(api_url, tx_hash)
+    print('Transaction Data:')
+    print(transaction_data_df)
+    transaction_analysis_df = analyze_transaction_data(transaction_data_df)
+    print('Transaction Analysis:')
+    print(transaction_analysis_df)
+
+    # Example usage for Block Analysis
+    block_number = 1234567
+    block_data_df = fetch_block_data(api_url, block_number)
+    print('Block Data:')
+    print(block_data_df)
+    block_analysis_df = analyze_block_data(block_data_df)
+    print('Block Analysis:')
+    print(block_analysis_df)
+
+    # Example usage for Network Statistics
+    network_statistics_df = fetch_network_statistics(api_url)
+    print('Network Statistics Data:')
+    print(network_statistics_df)
+    network_statistics_analysis_df = analyze_network_statistics(network_statistics_df)
+    print('Network Statistics Analysis:')
+    print(network_statistics_analysis_df)
+
+if __name__ == '__main__':
+    main()
